@@ -108,7 +108,6 @@ inputs:
     required: false
     default: ${undefined}
   changelog-file:
-    redirect: changelog
     description: A glob pointing to the changelog file.
     required: false
     default: ${undefined}
