@@ -3,7 +3,6 @@ import { MINECRAFT_VERSION_PROVIDER } from "@/games/minecraft";
 import { retry } from "@/utils/async-utils";
 import { isHttpError } from "@/utils/errors";
 import { JavaVersion } from "@/utils/java";
-import { getDefaultLogger } from "@/utils/logging";
 import { Fetch, HttpRequest, createFetch, simpleCache, throwOnError } from "@/utils/net";
 import { CurseForgeError, getInvalidProjectSlug, isCurseForgeError, isInvalidGameVersionIdCurseForgeError, isInvalidProjectSlugCurseForgeError } from "./curseforge-error";
 import { CurseForgeFile, CurseForgeFileInit } from "./curseforge-file";
@@ -260,10 +259,6 @@ async function tryHandleUploadError(error: Error, file: CurseForgeFileInit): Pro
     }
 
     if (isInvalidGameVersionIdCurseForgeError(errorObject)) {
-        // _ TODO: Add proper debug logging here.
-        const logger = getDefaultLogger();
-        logger.warn(`W.I.P. CurseForge rejected these game versions: [${file?.game_versions?.join(", ")}]. ${error}`);
-
         return handleInvalidGameVersionIdCurseForgeError(file);
     }
 
