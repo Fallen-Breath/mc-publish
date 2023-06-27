@@ -65,6 +65,9 @@ inputs:
   github-generate-changelog:
     type: boolean
     description: Set to true to generate a changelog automatically for this release; false otherwise. Ignored if the GitHub Release already exists.
+  github-update-release-body:
+    type: boolean
+    description: If the release body should be updated to the input changelog. By default, the value is true (original behavior).
   github-draft:
     type: boolean
     description: Set to true to create a draft release; false otherwise. Ignored if the GitHub Release already exists.

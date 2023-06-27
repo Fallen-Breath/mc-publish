@@ -49,6 +49,11 @@ inputs:
       false otherwise. Ignored if the GitHub Release already exists.
     required: false
     default: ${undefined}
+  github-update-release-body:
+    description: If the release body should be updated to the input changelog. By
+      default, the value is true (original behavior).
+    required: false
+    default: ${undefined}
   github-draft:
     description: Set to true to create a draft release; false otherwise. Ignored if
       the GitHub Release already exists.

@@ -130,7 +130,7 @@ export class GitHubUploader extends GenericPlatformUploader<GitHubUploaderOption
         return await api.updateRelease({
             ...this._context.repo,
             id: releaseId,
-            body: request.changelog,
+            body: (request.updateReleaseBody ?? true) ? request.changelog : undefined,
             assets: request.files,
         });
     }

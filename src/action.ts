@@ -213,6 +213,11 @@ export interface McPublishInput {
         generateChangelog?: boolean;
 
         /**
+         * If the release body should be updated to the input changelog. By default, the value is true (original behavior).
+         */
+        updateReleaseBody?: boolean;
+
+        /**
          * Set to true to create a draft release; false otherwise. Ignored if the GitHub Release already exists.
          */
         draft?: boolean;
